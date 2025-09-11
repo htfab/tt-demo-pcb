@@ -1,0 +1,40 @@
+(version 1)
+
+(rule "neckdown Carrier DF40"
+   (constraint track_width (min 0.16mm) (opt 0.2mm) (max 0.25mm))
+   (constraint clearance (min 0.16mm) (opt 0.16mm) (max 0.2mm))
+   (condition "A.intersectsCourtyard('TinyTapeout:TT_HRS_CARRIER_REV*') && A.Layer == 'F.Cu' && A.Type != 'Zone'")
+)
+
+
+(rule "neckdown Carrier DF40 Pads"
+   (constraint clearance (min 0.16mm) (opt 0.16mm) (max 0.2mm))
+   (condition "A.Type == 'Pad' && A.memberOfFootprint('TinyTapeout:TT_HRS_CARRIER_REV*')")
+)
+
+
+(rule "neckdown DF40"
+   (constraint track_width (min 0.16mm) (opt 0.2mm) (max 0.25mm))
+   (constraint clearance (min 0.16mm) (opt 0.16mm) (max 0.2mm))
+   (condition "A.intersectsCourtyard('TinyTapeout:*DF40*') && A.Layer == 'F.Cu' && A.Type != 'Zone'")
+)
+
+
+(rule "neckdown DF40 Pads"
+   (constraint clearance (min 0.16mm) (opt 0.16mm) (max 0.2mm))
+   (condition "A.Type == 'Pad' && A.memberOfFootprint('TinyTapeout:*DF40*')")
+)
+
+
+(rule "neckdown QFN80"
+   (constraint track_width (min 0.16mm) (opt 0.20mm) (max 0.25mm))
+   (constraint clearance (min 0.16mm) (opt 0.16mm) (max 0.2mm))
+   (condition "A.intersectsCourtyard('Package_DFN_QFN:QFN-80*') && A.Layer == 'F.Cu' && A.Type != 'Zone'")
+
+)
+
+(rule "neckdown QFN80 pads"
+   (constraint clearance (min 0.18mm) (opt 0.20mm) (max 0.2mm))
+   (condition "A.Type == 'Pad' && A.memberOfFootprint('Package_DFN_QFN:QFN-80*')")
+
+)
