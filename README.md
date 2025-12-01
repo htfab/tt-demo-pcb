@@ -1,6 +1,6 @@
 # TinyTapeout Demo Board
 
-Demo board for TinyTapeout 4 and beyond.
+Demo board for TinyTapeout ASICs
 
 ![Demoboard PCB](doc/img/tt-etr-dbv3p2-render.png)
 
