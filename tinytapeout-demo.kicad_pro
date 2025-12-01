@@ -37,9 +37,9 @@
         "other_text_thickness": 0.3,
         "other_text_upright": false,
         "pads": {
-          "drill": 1.0,
-          "height": 1.7,
-          "width": 1.7
+          "drill": 0.3,
+          "height": 0.62,
+          "width": 0.62
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.14,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.35
+          "min_clearance": 0.2
         }
       },
       "diff_pair_dimensions": [
@@ -102,12 +102,12 @@
         "net_conflict": "warning",
         "nonmirrored_text_on_back_layer": "warning",
         "npth_inside_courtyard": "ignore",
-        "padstack": "warning",
+        "padstack": "error",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
-        "silk_edge_clearance": "warning",
-        "silk_over_copper": "warning",
-        "silk_overlap": "warning",
+        "silk_edge_clearance": "ignore",
+        "silk_over_copper": "ignore",
+        "silk_overlap": "ignore",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
@@ -136,7 +136,7 @@
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.2,
         "min_microvia_drill": 0.1,
-        "min_resolved_spokes": 2,
+        "min_resolved_spokes": 1,
         "min_silk_clearance": 0.0,
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
@@ -514,7 +514,7 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
+        "track_width": 0.22,
         "via_diameter": 0.65,
         "via_drill": 0.3,
         "wire_width": 6
@@ -525,7 +525,7 @@
         "pcb_color": "rgb(236, 188, 0)",
         "priority": 0,
         "schematic_color": "rgb(236, 188, 0)",
-        "track_width": 0.2
+        "track_width": 0.25
       },
       {
         "clearance": 0.3,
@@ -541,7 +541,7 @@
         "pcb_color": "rgb(234, 101, 0)",
         "priority": 4,
         "schematic_color": "rgb(234, 101, 0)",
-        "track_width": 0.2
+        "track_width": 0.24
       },
       {
         "name": "IOBidir",
@@ -593,6 +593,9 @@
       "GND": "rgb(154, 2, 0)"
     },
     "netclass_assignments": {
+      "/A": [
+        "Analog"
+      ],
       "/ADC0": [
         "Managemnt"
       ],
@@ -611,11 +614,32 @@
       "/ADC5": [
         "Managemnt"
       ],
+      "/B": [
+        "Analog"
+      ],
       "/BOOT": [
         "Managemnt"
       ],
+      "/C": [
+        "Analog"
+      ],
       "/CS": [
         "Managemnt"
+      ],
+      "/D": [
+        "Analog"
+      ],
+      "/E": [
+        "Analog"
+      ],
+      "/F": [
+        "Analog"
+      ],
+      "/G": [
+        "Analog"
+      ],
+      "/H": [
+        "Analog"
       ],
       "/IO29": [
         "Managemnt"
@@ -626,11 +650,38 @@
       "/IO31": [
         "Managemnt"
       ],
+      "/IO32": [
+        "Managemnt"
+      ],
+      "/J": [
+        "Analog"
+      ],
+      "/K": [
+        "Analog"
+      ],
+      "/L": [
+        "Analog"
+      ],
+      "/M": [
+        "Analog"
+      ],
       "/MISO": [
         "Managemnt"
       ],
       "/MOSI": [
         "Managemnt"
+      ],
+      "/N": [
+        "Analog"
+      ],
+      "/P": [
+        "Analog"
+      ],
+      "/Q": [
+        "Analog"
+      ],
+      "/R": [
+        "Analog"
       ],
       "/RP2350/CLKIN": [
         "HighSpeed"
@@ -674,8 +725,26 @@
       "/RUN": [
         "Managemnt"
       ],
+      "/S": [
+        "Analog"
+      ],
       "/SCK": [
         "Managemnt"
+      ],
+      "/T": [
+        "Analog"
+      ],
+      "/U": [
+        "Analog"
+      ],
+      "/V": [
+        "Analog"
+      ],
+      "/W": [
+        "Analog"
+      ],
+      "/X": [
+        "Analog"
       ],
       "/analog0": [
         "Analog"
@@ -734,6 +803,33 @@
       "/m_TX": [
         "Managemnt"
       ],
+      "/mng0": [
+        "Managemnt"
+      ],
+      "/mng1": [
+        "Managemnt"
+      ],
+      "/mng2": [
+        "Managemnt"
+      ],
+      "/mng3": [
+        "Managemnt"
+      ],
+      "/mng4": [
+        "Managemnt"
+      ],
+      "/mng5": [
+        "Managemnt"
+      ],
+      "/mng6": [
+        "Managemnt"
+      ],
+      "/mng7": [
+        "Managemnt"
+      ],
+      "/mng[0..7]": [
+        "Managemnt"
+      ],
       "/ui_in4": [
         "IOIn"
       ],
@@ -781,6 +877,12 @@
       ],
       "/{EXP}": [
         "Managemnt"
+      ],
+      "/{analog}": [
+        "Analog"
+      ],
+      "Net-(J9-Pin_3)": [
+        "HighSpeed"
       ],
       "Net-(JP1-B)": [
         "IOOutput"
@@ -887,6 +989,9 @@
       "uio3": [
         "IOBidir"
       ],
+      "unconnected-(J3F-mng00-PadR42)": [
+        "Managemnt"
+      ],
       "uo_out0": [
         "IOOutput"
       ],
@@ -942,10 +1047,10 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "pcba/gerber/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "ttdbv3.step",
       "svg": "",
       "vrml": "tinytapeout-demo.wrl"
     },
@@ -953,7 +1058,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
-    "bom_export_filename": "${PROJECTNAME}.csv",
+    "bom_export_filename": "/tmp/${PROJECTNAME}.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -964,9 +1069,380 @@
       "ref_range_delimiter": "",
       "string_delimiter": "\""
     },
-    "bom_presets": [],
+    "bom_presets": [
+      {
+        "exclude_dnp": true,
+        "fields_ordered": [
+          {
+            "group_by": false,
+            "label": "Reference",
+            "name": "Reference",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "Qty",
+            "name": "${QUANTITY}",
+            "show": true
+          },
+          {
+            "group_by": true,
+            "label": "Value",
+            "name": "Value",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "Characteristics",
+            "name": "Characteristics",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "Exclude from BOM",
+            "name": "${EXCLUDE_FROM_BOM}",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Exclude from Board",
+            "name": "${EXCLUDE_FROM_BOARD}",
+            "show": false
+          },
+          {
+            "group_by": true,
+            "label": "Footprint",
+            "name": "Footprint",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "MPN",
+            "name": "MPN",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "Datasheet",
+            "name": "Datasheet",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Component Class",
+            "name": "Component Class",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "DNC",
+            "name": "DNC",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "DNP",
+            "name": "DNP",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "DigikeyPN",
+            "name": "DigikeyPN",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Digikey_PN",
+            "name": "Digikey_PN",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Display Value",
+            "name": "Display Value",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Field11",
+            "name": "Field11",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "LCSC",
+            "name": "LCSC",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "MANUFACTURER",
+            "name": "MANUFACTURER",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "MAXIMUM_PACKAGE_HEIGHT",
+            "name": "MAXIMUM_PACKAGE_HEIGHT",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "MF",
+            "name": "MF",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "MPN_ALT",
+            "name": "MPN_ALT",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Manufacturer",
+            "name": "Manufacturer",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Note",
+            "name": "Note",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Package / Case",
+            "name": "Package / Case",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Variant",
+            "name": "Variant",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Description",
+            "name": "Description",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "#",
+            "name": "${ITEM_NUMBER}",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "JLC",
+            "name": "JLC",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "DNP",
+            "name": "${DNP}",
+            "show": true
+          }
+        ],
+        "filter_string": "",
+        "group_symbols": true,
+        "include_excluded_from_bom": false,
+        "name": "stdbomexport",
+        "sort_asc": true,
+        "sort_field": "Reference"
+      },
+      {
+        "exclude_dnp": true,
+        "fields_ordered": [
+          {
+            "group_by": false,
+            "label": "Reference",
+            "name": "Reference",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "Qty",
+            "name": "${QUANTITY}",
+            "show": true
+          },
+          {
+            "group_by": true,
+            "label": "Value",
+            "name": "Value",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "Characteristics",
+            "name": "Characteristics",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "Exclude from BOM",
+            "name": "${EXCLUDE_FROM_BOM}",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Exclude from Board",
+            "name": "${EXCLUDE_FROM_BOARD}",
+            "show": false
+          },
+          {
+            "group_by": true,
+            "label": "Footprint",
+            "name": "Footprint",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "MPN",
+            "name": "MPN",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "Datasheet",
+            "name": "Datasheet",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Component Class",
+            "name": "Component Class",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "DNC",
+            "name": "DNC",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "DNP",
+            "name": "DNP",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "DigikeyPN",
+            "name": "DigikeyPN",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Digikey_PN",
+            "name": "Digikey_PN",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Display Value",
+            "name": "Display Value",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Field11",
+            "name": "Field11",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "LCSC",
+            "name": "LCSC",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "MANUFACTURER",
+            "name": "MANUFACTURER",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "MAXIMUM_PACKAGE_HEIGHT",
+            "name": "MAXIMUM_PACKAGE_HEIGHT",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "MF",
+            "name": "MF",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "MPN_ALT",
+            "name": "MPN_ALT",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Manufacturer",
+            "name": "Manufacturer",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Note",
+            "name": "Note",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Package / Case",
+            "name": "Package / Case",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Variant",
+            "name": "Variant",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "Description",
+            "name": "Description",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "#",
+            "name": "${ITEM_NUMBER}",
+            "show": false
+          },
+          {
+            "group_by": false,
+            "label": "JLC",
+            "name": "JLC",
+            "show": true
+          },
+          {
+            "group_by": false,
+            "label": "DNP",
+            "name": "${DNP}",
+            "show": true
+          }
+        ],
+        "filter_string": "",
+        "group_symbols": true,
+        "include_excluded_from_bom": false,
+        "name": "stdboxexport",
+        "sort_asc": true,
+        "sort_field": "Footprint"
+      }
+    ],
     "bom_settings": {
-      "exclude_dnp": false,
+      "exclude_dnp": true,
       "fields_ordered": [
         {
           "group_by": false,
@@ -987,22 +1463,22 @@
           "show": true
         },
         {
-          "group_by": true,
-          "label": "DNP",
-          "name": "${DNP}",
+          "group_by": false,
+          "label": "Characteristics",
+          "name": "Characteristics",
           "show": true
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "Exclude from BOM",
           "name": "${EXCLUDE_FROM_BOM}",
-          "show": true
+          "show": false
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "Exclude from Board",
           "name": "${EXCLUDE_FROM_BOARD}",
-          "show": true
+          "show": false
         },
         {
           "group_by": true,
@@ -1012,9 +1488,15 @@
         },
         {
           "group_by": false,
+          "label": "MPN",
+          "name": "MPN",
+          "show": true
+        },
+        {
+          "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -1062,7 +1544,7 @@
           "group_by": false,
           "label": "LCSC",
           "name": "LCSC",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -1080,12 +1562,6 @@
           "group_by": false,
           "label": "MF",
           "name": "MF",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "MPN",
-          "name": "MPN",
           "show": false
         },
         {
@@ -1120,12 +1596,6 @@
         },
         {
           "group_by": false,
-          "label": "Characteristics",
-          "name": "Characteristics",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Description",
           "name": "Description",
           "show": false
@@ -1135,14 +1605,26 @@
           "label": "#",
           "name": "${ITEM_NUMBER}",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "JLC",
+          "name": "JLC",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "DNP",
+          "name": "${DNP}",
+          "show": true
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "include_excluded_from_bom": true,
+      "include_excluded_from_bom": false,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Footprint"
+      "sort_field": "Reference"
     },
     "connection_grid_size": 50.0,
     "drawing": {
@@ -1150,7 +1632,13 @@
       "dashed_lines_gap_length_ratio": 3.0,
       "default_line_thickness": 6.0,
       "default_text_size": 50.0,
-      "field_names": [],
+      "field_names": [
+        {
+          "name": "JLC",
+          "url": false,
+          "visible": false
+        }
+      ],
       "intersheets_ref_own_page": false,
       "intersheets_ref_prefix": "",
       "intersheets_ref_short": false,
