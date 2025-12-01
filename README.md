@@ -2,20 +2,20 @@
 
 Demo board for TinyTapeout 4 and beyond.
 
-![Demoboard PCB](doc/img/tt07-demoboard-render.jpg)
+![Demoboard PCB](doc/img/tt-etr-dbv3p2-render.png)
 
-These demonstration PCBs, in use since TT04, allow you to interact with [TinyTapeout](https://tinytapeout.com/) projects in 3 ways:
+These demonstration PCBs allow you to interact with [TinyTapeout](https://tinytapeout.com/) projects in 3 ways:
 
   * directly, using the input DIP switches and 7-segment display;
   * via breadboard or extension boards through PMODs; or
-  * by interacting through the on-board RP2040
+  * by interacting through the on-board RP2
   
 
-![Demoboard PCB](doc/img/tt07-demoboard.jpg)
+![Demoboard PCB](doc/img/tt-etr-dbv3-board.jpg)
 
-In addition, since TT06, it is possible to create analog and mixed signal designs.  These, more sensitive, signals are accessed directly through u.fl connectors on the breakout board.
+In addition, since TT06, it is possible to create analog and mixed signal designs.  These signals are now available on a 100mil header directly on the demoboard
 
-![Breakout Board Analog IO](doc/img/tt07-analogio.jpg)
+![Breakout Board Analog IO](doc/img/tt-etr-dbv3-analog.jpg)
 
 
 ## Pinout Overview
@@ -30,11 +30,11 @@ The details above are for the latest version of the demoboard.  To access leafle
 ## Schematic and Function
 
 
-The full schematic is available as a [PDF](doc/demoboard-v2-1-2.pdf) but the gist of it is:
+The full schematic is available as a [PDF](doc/tt-etr-dbv3.pdf) but the gist of it is:
 
-![Demoboard schematic](doc/img/tt08-schematic-preview.jpg)
+![Demoboard schematic](doc/img/tt-etr-dbv3-schematic.png)
 
-The RP2040 is responsible for selecting projects, by controlling the project MUX that's on the ASIC and, under most circumstances, providing the clock for the projects. It may, thereafter, interact with the design via it's connections to the input, output and bidirectional pins.
+The RP2350 is responsible for selecting projects, by controlling the project MUX that's on the ASIC and, under most circumstances, providing the clock for the projects. It may, thereafter, interact with the design via it's connections to the input, output and bidirectional pins.
 
 Another option is to use the various PMOD and pin headers to tie external circuitry to the design.  PMODs are provided in two varieties: straightforward I/O (where one PMOD is dedicated to each of in/out/bidir pins) and "standard" PMODs, that are mapped (mostly) according to specs to allow for SPI, I2C and UART extension boards to be plugged in (this assumes the project has been designed with this in mind, with I/O tasked accordingly). 
 
@@ -42,7 +42,7 @@ Another option is to use the various PMOD and pin headers to tie external circui
 
 ## PMODs
 
-In addition with interfacing directly with projects via the RP2040, extensions and interaction with the ASIC is possible through two sets of [PMODs](https://digilent.com/reference/_media/reference/pmod/pmod-interface-specification-1_2_0.pdf) on the demo boards.
+In addition with interfacing directly with projects via the RP2, extensions and interaction with the ASIC is possible through two sets of [PMODs](https://digilent.com/reference/_media/reference/pmod/pmod-interface-specification-1_2_0.pdf) on the demo boards.
 
 The three on the bottom provide access to all the project I/O in a logical fashion, with inputs, bidirectional pins and outputs available on their own distinct headers.
 
@@ -50,17 +50,13 @@ The three on the bottom provide access to all the project I/O in a logical fashi
 
 This is nice and orderly and gives you access to all the pins, but extension boards will often need to span at least two, and sometimes three, distinct headers.
 
-In the hope of providing simpler support for interfacing peripheral modules, an additional set of PMODs pinouts were added on the left side of the PCB.  These provide various mixes of in, out and bidirectional pins that should allow a variety of uses
+For interfacing peripheral modules, an interposer board was created (TODO: display and link) to provide more standard mixes of input and output on single PMODs.
 
-![Mixed PMODs](doc/img/pmods-mixed.png)
+## RP2 Pinout
 
-It is likely that not all the headers will actually be populated on delivered PCBs, but these are throughole components which makes stuffing them in after the fact relatively easy.
+TODO: Update
 
-Both sets of PMODs respect the digilent specification in terms of spacing, and are *host* side pinouts: modules connecting to these must be wired as PMOD peripherals, and can be powered via the supplied 3v3 rails.
-
-## RP2040 Pinout
-
-| TT Pin    | RP2040 Pin | I2C      | SPI      | UART     |
+| TT Pin    | RP2 Pin | I2C      | SPI      | UART     |
 | --------- | ---------- | -------- | -------- | -------- |
 | ui_in[0]  | GPIO9      |          | SPI1.cs  |          |
 | ui_in[1]  | GPIO10     |          | SPI1.sck |          |
@@ -87,20 +83,16 @@ Both sets of PMODs respect the digilent specification in terms of spacing, and a
 | uio[6]    | GPIO27     | I2C1.scl | SPI1.tx  | UART1.rts|
 | uio[7]    | GPIO28     |          |          |          |
 
-\* These pins are multiplexed. They are connected to the RP2040 when GPIO1 is high.
+\* These pins are multiplexed. They are connected to the RP2 when GPIO1 is high.
 
 ## Removing the ASIC breakout board
 
-Be careful removing the breakout board, it's easy to bend the pins or hurt yourself.
+With the [Hirose DF12 Series](https://www.hirose.com/product/series/DF12) connectors now in use, removing breakouts from demoboards should be much more straightforward:
 
-* Lever the breakout board up 1mm at a time by inserting a pen or other lever under the board and gently pressing,
-* Keep swapping sides, to evenly push the carrier board away from the demo board.
+* Insert a finger on opposite diagonals (top left, bottom right)
+* Gently pry upwards until the breakout pops off.
 
-
-These [levers](pcb_extractor.stl) can be 3D printed and make it easier. This [video](https://discord.com/channels/1009193568256135208/1011201396659474432/1260876742730448907) shows them in use.
-
-
-There are arrows indicating areas that are relatively component-free to assist with placing the levers.
+There are markings indicating where the actually connectors are placed, on the underside, on the breakouts.
 
 ## License
 
