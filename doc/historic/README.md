@@ -5,6 +5,18 @@ Though this schematic and layout data is all preserved in the commit history, fo
 These should be the revisions actually sent to production for distribution.  The PDF includes the full schematic and the preview gives access to the most important information, as the RP2040 support sheet basically doesn't change.
 
 
+## TT08
+
+![TT08 leaflet](leaflet/tt08-pinout.png)
+
+![TT08 schematic](demoboard-v2-1-2.jpg)
+
+[Version 2.1.2 schematic PDF](demoboard-v2-1-2.pdf)
+
+
+Commit 028a51b1e5c6ff667839e42a188bc87d1115ad95 from Feb 25 19:59:02
+
+
 ## TT07
 
 With the TT07 demoboard, signal naming was uniformized (using *ui_in*, *uo_out*).

@@ -20,7 +20,7 @@ In addition, since TT06, it is possible to create analog and mixed signal design
 
 ## Pinout Overview
 
-![Demoboard Pinout](doc/img/tt08-demoboard-pinout.jpg)
+![Demoboard Pinout](doc/img/tt-etr-dbv3p2-pinout.png)
 
 
 ### Previous Demoboard Versions
@@ -54,36 +54,36 @@ For interfacing peripheral modules, an interposer board was created (TODO: displ
 
 ## RP2 Pinout
 
-TODO: Update
 
-| TT Pin    | RP2 Pin | I2C      | SPI      | UART     |
+| TT Pin    | RP2 Pin    | I2C      | SPI      | UART     |
 | --------- | ---------- | -------- | -------- | -------- |
-| ui_in[0]  | GPIO9      |          | SPI1.cs  |          |
-| ui_in[1]  | GPIO10     |          | SPI1.sck |          |
-| ui_in[2]  | GPIO11     |          | SPI1.tx  | UART1.rts|
-| ui_in[3]  | GPIO12     |          |          | UART0.tx |
-| ui_in[4]  | GPIO17     |          | SPI0.cs  |          |
-| ui_in[5]  | GPIO18     |          | SPI0.sck |          |
-| ui_in[6]  | GPIO19     |          | SPI0.tx  | UART0.rts|
-| ui_in[7]  | GPIO20     |          |          | UART1.tx |
-| uo_out[0] | GPIO5      |          |          | UART1.rx |
-| uo_out[1] | GPIO6 \*   |          |          | UART1.cts|
-| uo_out[2] | GPIO7 \*   |          |          |          |
-| uo_out[3] | GPIO8 \*   |          | SPI1.rx  |          |
-| uo_out[4] | GPIO13     |          |          | UART0.rx |
-| uo_out[5] | GPIO14     |          |          | UART0.cts|
-| uo_out[6] | GPIO15     |          |          |          |
-| uo_out[7] | GPIO16     |          | SPI0.rx  |          |
-| uio[0]    | GPIO21     |          | SPI0.cs  | UART1.rx |
-| uio[1]    | GPIO22     | I2C1.sda | SPI0.sck | UART1.cts|
-| uio[2]    | GPIO23     | I2C1.scl | SPI0.tx  | UART1.rts|
-| uio[3]    | GPIO24     | I2C0.sda | SPI1.rx  | UART1.tx |
-| uio[4]    | GPIO25     | I2C0.scl | SPI1.cs  | UART1.rx |
-| uio[5]    | GPIO26     | I2C1.sda | SPI1.sck | UART1.cts|
-| uio[6]    | GPIO27     | I2C1.scl | SPI1.tx  | UART1.rts|
-| uio[7]    | GPIO28     |          |          |          |
+| reset     | GPIO14     |          |          |          |
+| clock     | GPIO16     |          |          |          |
+| ui_in[0]  | GPIO17     |          | SPI0.cs  |          |
+| ui_in[1]  | GPIO18     |          | SPI0.sck |          |
+| ui_in[2]  | GPIO19     |          | SPI0.tx  |          |
+| ui_in[3]  | GPIO20     |          |          | UART1.tx |
+| ui_in[4]  | GPIO21     |          | SPI0.cs  |          |
+| ui_in[5]  | GPIO22     |          | SPI0.sck |          |
+| ui_in[6]  | GPIO23     |          | SPI0.tx  | UART1.rts|
+| ui_in[7]  | GPIO24     |          |          |          |
+| uio[0]    | GPIO25     | I2C0.scl | SPI1.cs  | UART1.rx |
+| uio[1]    | GPIO26     | I2C1.sda | SPI1.sck | UART1.cts|
+| uio[2]    | GPIO27     | I2C1.scl | SPI1.tx  | UART0.rts|
+| uio[3]    | GPIO28     | I2C0.sda | SPI1.rx  | UART0.tx |
+| uio[4]    | GPIO29     | I2C0.scl | SPI1.cs  | UART0.rx |
+| uio[5]    | GPIO30     | I2C1.sda | SPI1.sck | UART0.cts|
+| uio[6]    | GPIO31     | I2C1.scl | SPI1.tx  | UART0.rts|
+| uio[7]    | GPIO32     |          |          |          |
+| uo_out[0] | GPIO33     |          |          | UART0.rx |
+| uo_out[1] | GPIO34     |          |          | UART0.cts|
+| uo_out[2] | GPIO35     |          |          |          |
+| uo_out[3] | GPIO36     |          | SPI0.rx  |          |
+| uo_out[4] | GPIO37     |          |          | UART1.rx |
+| uo_out[5] | GPIO38     |          |          | UART1.cts|
+| uo_out[6] | GPIO39     |          |          |          |
+| uo_out[7] | GPIO40     |          | SPI0.rx  |          |
 
-\* These pins are multiplexed. They are connected to the RP2 when GPIO1 is high.
 
 ## Removing the ASIC breakout board
 
